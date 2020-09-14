@@ -83,6 +83,7 @@ const cjsAndEsmPackage = [
   /lib\/router$/,
   /lib\/source-loader$/,
   /lib\/theming$/,
+  /lib\/core$/,
 ];
 const modulePath = path.resolve('./');
 const packageJson = getPackageJson(modulePath);

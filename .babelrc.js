@@ -87,6 +87,23 @@ module.exports = {
       },
     },
     {
+      test: ['**/virtualModuleEntry.template.js'],
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            shippedProposals: true,
+            useBuiltIns: 'usage',
+            targets: {
+              node: '8.11',
+            },
+            corejs: '3',
+            modules: false,
+          },
+        ],
+      ],
+    },
+    {
       test: [
         './lib/node-logger',
         './lib/codemod',

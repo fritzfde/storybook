@@ -15,7 +15,9 @@
     "directory": "lib/core"
   },
   "license": "MIT",
-  "main": "dist/client/index.js",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/client/index.d.ts",
   "files": [
     "dist/**/*",
