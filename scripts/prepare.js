@@ -70,6 +70,12 @@ function logError(type, packageJson, errorLogs) {
 }
 
 const cjsAndEsmPackage = [
+  /addons\/actions$/,
+  /addons\/backgrounds$/,
+  /addons\/cssresources$/,
+  /addons\/design-assets$/,
+  /addons\/events$/,
+  /addons\/jest$/,
   /addons\/toolbars$/,
   /addons\/viewport$/,
   /addons\/links$/,
