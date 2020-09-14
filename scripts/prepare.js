@@ -70,6 +70,11 @@ function logError(type, packageJson, errorLogs) {
 }
 
 const cjsAndEsmPackage = [
+  /addons\/a11y$/,
+  /addons\/controls$/,
+  /addons\/google-analytics$/,
+  /addons\/graphql$/,
+  /addons\/knobs$/,
   /addons\/actions$/,
   /addons\/backgrounds$/,
   /addons\/cssresources$/,
