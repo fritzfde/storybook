@@ -47,3 +47,5 @@ export * from './controls';
 
 // Loader
 export { Loader } from './Loader/Loader';
+
+export * from './html';
