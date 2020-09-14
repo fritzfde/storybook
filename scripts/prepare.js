@@ -72,6 +72,9 @@ function logError(type, packageJson, errorLogs) {
 const cjsAndEsmPackage = [
   /addons\/toolbars$/,
   /addons\/viewport$/,
+  /addons\/links$/,
+  /addons\/queryparams$/,
+  /addons\/storysource$/,
   /lib\/api$/,
   /lib\/addons$/,
   /lib\/channel-postmessage$/,
