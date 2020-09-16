@@ -69,48 +69,13 @@ function logError(type, packageJson, errorLogs) {
   );
 }
 
-const cjsAndEsmPackage = [
-  /addons\/a11y$/,
-  /addons\/docs$/,
-  /addons\/controls$/,
-  /addons\/google-analytics$/,
-  /addons\/graphql$/,
-  /addons\/knobs$/,
-  /addons\/actions$/,
-  /addons\/backgrounds$/,
-  /addons\/cssresources$/,
-  /addons\/design-assets$/,
-  /addons\/events$/,
-  /addons\/jest$/,
-  /addons\/toolbars$/,
-  /addons\/viewport$/,
-  /addons\/links$/,
-  /addons\/queryparams$/,
-  /addons\/storysource$/,
-  /lib\/api$/,
-  /lib\/addons$/,
-  /lib\/channel-postmessage$/,
-  /lib\/channel-websocket$/,
-  /lib\/channels$/,
-  /lib\/client-api$/,
-  /lib\/client-logger$/,
-  /lib\/components$/,
-  /lib\/ui$/,
-  /lib\/core-events$/,
-  /lib\/router$/,
-  /lib\/source-loader$/,
-  /lib\/theming$/,
-  /lib\/core$/,
-];
 const modulePath = path.resolve('./');
 const packageJson = getPackageJson(modulePath);
-const modules = cjsAndEsmPackage.some((regex) => modulePath.match(regex));
 
 async function prepare() {
   removeDist();
 
   await babelify({
-    modules,
     errorCallback: (errorLogs) => logError('js', packageJson, errorLogs),
   });
   tscfy({ errorCallback: (errorLogs) => logError('ts', packageJson, errorLogs) });

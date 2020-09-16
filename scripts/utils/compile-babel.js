@@ -76,8 +76,45 @@ async function run({ watch, dir, silent, errorCallback }) {
   });
 }
 
+const cjsAndEsmPackage = [
+  /addons\/a11y$/,
+  /addons\/actions$/,
+  /addons\/backgrounds$/,
+  /addons\/controls$/,
+  /addons\/cssresources$/,
+  /addons\/design-assets$/,
+  /addons\/docs$/,
+  /addons\/events$/,
+  /addons\/google-analytics$/,
+  /addons\/graphql$/,
+  /addons\/jest$/,
+  /addons\/knobs$/,
+  /addons\/links$/,
+  /addons\/queryparams$/,
+  /addons\/storysource$/,
+  /addons\/toolbars$/,
+  /addons\/viewport$/,
+
+  /lib\/addons$/,
+  /lib\/api$/,
+  /lib\/channel-postmessage$/,
+  /lib\/channel-websocket$/,
+  /lib\/channels$/,
+  /lib\/client-api$/,
+  /lib\/client-logger$/,
+  /lib\/components$/,
+  /lib\/core$/,
+  /lib\/core-events$/,
+  /lib\/router$/,
+  /lib\/source-loader$/,
+  /lib\/theming$/,
+  /lib\/ui$/,
+];
+
 async function babelify(options = {}) {
-  const { watch = false, silent = true, modules, errorCallback } = options;
+  const modulePath = path.resolve('./');
+  const modules = cjsAndEsmPackage.some((regex) => modulePath.match(regex));
+  const { watch = false, silent = true, errorCallback } = options;
 
   if (!fs.existsSync('src')) {
     if (!silent) {
